@@ -835,9 +835,6 @@ export default function App() {
             Download PDF
           </Button>
         </motion.div>
-        <IconButton href="#showcase" aria-label="Scroll">
-          <ArrowDownwardIcon sx={{ color: "rgba(255,255,255,.7)" }} />
-        </IconButton>
       </Stack>
             </Grid>
 
