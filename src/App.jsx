@@ -25,7 +25,7 @@ import MovieCreationIcon from "@mui/icons-material/MovieCreation";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import PersonIcon from "@mui/icons-material/Person";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-
+import InstagramIcon from "@mui/icons-material/Instagram";
 // Fonts
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
@@ -66,7 +66,9 @@ const portfolio = {
     "/images/dharma04.jpeg",
     "/images/dharma05.jpeg",
     "/images/dharma06.jpeg",
-    "/images/dharma07.jpeg"
+    "/images/dharma07.jpeg",
+    "/images/dharma08.jpeg",
+    "/images/dharma09.jpeg",
   ]
 };
 
@@ -466,96 +468,130 @@ const Hero = () => {
           background: "radial-gradient(70% 100% at 80% 0%, rgba(230,193,123,.10) 0%, rgba(230,193,123,0) 60%)"
         }}
       />
+<Container maxWidth="xl" sx={{ position: "relative" }}>
+  <Grid container spacing={6} alignItems="center">
+    <Grid item xs={12} md={8} lg={7}>
+      <motion.div {...fadeUp} transition={{ duration: 0.65 }}>
+        {/* Name */}
+        <Typography
+          sx={{
+            fontFamily: "Playfair Display, serif",
+            fontWeight: 900,
+            letterSpacing: ".5px",
+            fontSize: { xs: "1.8rem", sm: "2.2rem", md: "2.6rem" },
+            lineHeight: 1.1,
+            color: "#fff",
+            mb: 0.5
+          }}
+        >
+          Dharma Teja Duba
+        </Typography>
 
-      <Container maxWidth="xl" sx={{ position: "relative" }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={8} lg={7}>
-            <motion.div {...fadeUp} transition={{ duration: 0.65 }}>
-              <Typography
-                component="h1"
-                sx={{
-                  fontFamily: "Playfair Display, serif",
-                  fontWeight: 800,
-                  letterSpacing: ".5px",
-                  fontSize: { xs: "2.4rem", sm: "3.2rem", md: "4.2rem" },
-                  lineHeight: 1.1
-                }}
+        {/* Role headline */}
+        <Typography
+          component="h1"
+          sx={{
+            fontFamily: "Playfair Display, serif",
+            fontWeight: 800,
+            letterSpacing: ".5px",
+            fontSize: { xs: "2.4rem", sm: "3.2rem", md: "4.2rem" },
+            lineHeight: 1.1
+          }}
+        >
+          <Box component="span" sx={{ color: "#fff" }}>TV, Film, and</Box>{" "}
+          <Box component="span" sx={{ color: "primary.main" }}>Theater</Box>{" "}
+          <Box component="span" sx={{ color: "#fff" }}>Actor</Box>
+        </Typography>
+
+        <Typography sx={{ mt: 2, color: "rgba(255,255,255,.78)" }}>
+          Available for commissions worldwide. Open to diverse roles that challenge range.
+        </Typography>
+      </motion.div>
+
+      {/* Info Pills (responsive + animated) */}
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={1.5}
+        sx={{ mt: 3, flexWrap: "wrap", rowGap: 1 }}
+        component={motion.div}
+        {...fadeUp}
+        transition={fast}
+      >
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
+            <>
+              <PersonIcon sx={{ fontSize: 18, mr: 0.5, verticalAlign: "middle" }} />
+              Age {portfolio.age}
+            </>
+          </Pill>
+        </motion.div>
+
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
+            Height {portfolio.height}
+          </Pill>
+        </motion.div>
+
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
+            <>
+              <PlaceIcon sx={{ fontSize: 18, mr: 0.5, verticalAlign: "middle" }} />
+              {portfolio.location}
+            </>
+          </Pill>
+        </motion.div>
+
+        {/* NEW: Instagram handle pill */}
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
+            <>
+              <InstagramIcon sx={{ fontSize: 18, mr: 0.5, verticalAlign: "middle" }} />
+              <Box
+                component="a"
+                href="https://instagram.com/dharmatejaduba"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: "inherit", textDecoration: "none" }}
+                aria-label="Instagram profile of Dharma Teja Duba"
               >
-                <Box component="span" sx={{ color: "#fff" }}>TV, Film, and</Box>{" "}
-                <Box component="span" sx={{ color: "primary.main" }}>Theater</Box>{" "}
-                <Box component="span" sx={{ color: "#fff" }}>Actor</Box>
-              </Typography>
+                @dharmatejaduba
+              </Box>
+            </>
+          </Pill>
+        </motion.div>
+      </Stack>
 
-              <Typography sx={{ mt: 2, color: "rgba(255,255,255,.78)" }}>
-                Available for commissions worldwide. Open to diverse roles that challenge range.
-              </Typography>
-            </motion.div>
-
-            {/* Info Pills (responsive + animated) */}
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={1.5}
-              sx={{ mt: 3, flexWrap: "wrap", rowGap: 1 }}
-              component={motion.div}
-              {...fadeUp}
-              transition={fast}
-            >
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
-                  <>
-                    <PersonIcon sx={{ fontSize: 18, mr: 0.5, paddingTop: 0.4 }} />
-                    Age {portfolio.age}
-                  </>
-                </Pill>
-              </motion.div>
-
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
-                  Height {portfolio.height}
-                </Pill>
-              </motion.div>
-
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Pill sx={{ width: { xs: "100%", sm: "auto" } }}>
-                  <>
-                    <PlaceIcon sx={{ fontSize: 18, mr: 0.5, paddingTop: 0.4 }} />
-                    {portfolio.location}
-                  </>
-                </Pill>
-              </motion.div>
-            </Stack>
-
-            {/* CTA Buttons */}
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={1.5}
-              sx={{ mt: 4, flexWrap: "wrap", rowGap: 1 }}
-              component={motion.div}
-              {...fadeUp}
-              transition={{ duration: 0.55, delay: 0.05 }}
-            >
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Button variant="contained" color="primary" startIcon={<PhoneIcon />} href={`tel:${portfolio.phone.replace(/\s+/g,"")}`}>
-                  Call
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Button variant="outlined" color="primary" startIcon={<EmailIcon />} href={`mailto:${portfolio.email}`}>
-                  Email
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
-                <Button variant="outlined" color="primary" startIcon={<FileDownloadIcon />} href={portfolio.pdfUrl} download>
-                  Download PDF
-                </Button>
-              </motion.div>
-              <IconButton href="#showcase" aria-label="Scroll">
-                <ArrowDownwardIcon sx={{ color: "rgba(255,255,255,.7)" }} />
-              </IconButton>
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
+      {/* CTA Buttons */}
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={1.5}
+        sx={{ mt: 4, flexWrap: "wrap", rowGap: 1 }}
+        component={motion.div}
+        {...fadeUp}
+        transition={{ duration: 0.55, delay: 0.05 }}
+      >
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="contained" color="primary" startIcon={<PhoneIcon />} href={`tel:${portfolio.phone.replace(/\s+/g,"")}`}>
+            Call
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="outlined" color="primary" startIcon={<EmailIcon />} href={`mailto:${portfolio.email}`}>
+            Email
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="outlined" color="primary" startIcon={<FileDownloadIcon />} href={portfolio.pdfUrl} download>
+            Download PDF
+          </Button>
+        </motion.div>
+        <IconButton href="#showcase" aria-label="Scroll">
+          <ArrowDownwardIcon sx={{ color: "rgba(255,255,255,.7)" }} />
+        </IconButton>
+      </Stack>
+    </Grid>
+  </Grid>
+</Container>
     </Box>
   );
 };
@@ -776,17 +812,33 @@ export default function App() {
                 I’m available for commissions and happy to act in your movie, play, or series.
               </Typography>
 
-              <Stack direction="row" spacing={2} sx={{ mt: 3, flexWrap: "wrap" }}>
-                <Button variant="contained" color="primary" startIcon={<EmailIcon />} href={`mailto:${portfolio.email}`}>
-                  Write Me
-                </Button>
-                <Button variant="outlined" color="primary" startIcon={<PhoneIcon />} href={`tel:${portfolio.phone.replace(/\s+/g,"")}`}>
-                  Call Me
-                </Button>
-                <Button variant="outlined" color="primary" startIcon={<FileDownloadIcon />} href={portfolio.pdfUrl} download>
-                  Download PDF
-                </Button>
-              </Stack>
+               <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={1.5}
+        sx={{ mt: 4, flexWrap: "wrap", rowGap: 1 }}
+        component={motion.div}
+        {...fadeUp}
+        transition={{ duration: 0.55, delay: 0.05 }}
+      >
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="contained" color="primary" startIcon={<PhoneIcon />} href={`tel:${portfolio.phone.replace(/\s+/g,"")}`}>
+            Call
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="outlined" color="primary" startIcon={<EmailIcon />} href={`mailto:${portfolio.email}`}>
+            Email
+          </Button>
+        </motion.div>
+        <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 350, damping: 20 }}>
+          <Button variant="outlined" color="primary" startIcon={<FileDownloadIcon />} href={portfolio.pdfUrl} download>
+            Download PDF
+          </Button>
+        </motion.div>
+        <IconButton href="#showcase" aria-label="Scroll">
+          <ArrowDownwardIcon sx={{ color: "rgba(255,255,255,.7)" }} />
+        </IconButton>
+      </Stack>
             </Grid>
 
             <Grid item xs={12} md={4}>
