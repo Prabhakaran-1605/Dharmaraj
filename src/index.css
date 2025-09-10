@@ -1,0 +1,5 @@
+/* Global resets for full-bleed layout */
+html, body, #root { height: 100%; }
+body { margin: 0; }
+#root { max-width: none; padding: 0; margin: 0; }
+img { display: block; }
